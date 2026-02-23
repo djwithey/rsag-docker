@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
       git \
       ros-$ROS_DISTRO-rqt-tf-tree \
       ros-$ROS_DISTRO-xacro \
+      ros-$ROS_DISTRO-rclpy \
       ros-dev-tools \
       python3-pip \
       python3-colcon-common-extensions \
