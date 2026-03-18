@@ -69,12 +69,12 @@ RUN mkdir -p $DEV_WS/src
 WORKDIR $DEV_WS/src
 COPY ./practical_ws/src . 
 COPY ./ros_entrypoint.sh /
-# Generate SDF file
-WORKDIR $DEV_WS/src/simple_robot_description/urdf
-RUN . /opt/ros/${ROS_DISTRO}/setup.bash; \
-        xacro simple_robot_gazebo.urdf.xacro > simple_robot_gazebo.urdf
-RUN . /opt/ros/${ROS_DISTRO}/setup.bash; \
-        gz sdf -p simple_robot_gazebo.urdf > ../sdf/simple_robot_gazebo.sdf
+# Generate SDF file - Note: No longer needed with Jazzy and Gazebo Harmonic
+#WORKDIR $DEV_WS/src/simple_robot_description/urdf
+#RUN . /opt/ros/${ROS_DISTRO}/setup.bash; \
+#        xacro simple_robot_gazebo.urdf.xacro > simple_robot_gazebo.urdf
+#RUN . /opt/ros/${ROS_DISTRO}/setup.bash; \
+#        gz sdf -p simple_robot_gazebo.urdf > ../sdf/simple_robot_gazebo.sdf
 # Build and install
 WORKDIR $DEV_WS
 RUN . /opt/ros/${ROS_DISTRO}/setup.bash; \
